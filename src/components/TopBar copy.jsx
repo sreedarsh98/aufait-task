@@ -10,13 +10,7 @@ function TopBar({
 }) {
   return (
     <div className="topbar">
-      {/* <div className="topbar-header">
-        <div className="user-profile">
-          <div className="user-avatar">👤</div>
-          <span className="username">Help ▼</span>
-        </div>
-      </div> */}
-
+     
       <div className="dashboard-header">
         <h1 className="dashboard-title">Enterprise Risk Management</h1>
 
@@ -81,14 +75,14 @@ function TopBar({
 
         <div className="search-section">
           <InputGroup className="search-input">
-            <InputGroup.Text>🔍</InputGroup.Text>
+            <InputGroup.Text></InputGroup.Text>
             <Form.Control
               placeholder="Search..."
               onChange={(e) => onSearchChange(e.target.value)}
             />
           </InputGroup>
           <Button variant="light" className="filters-btn">
-            ⚙️ Filters
+             Filters
           </Button>
           <Button variant="warning" className="create-btn" onClick={onCreateClick}>
             + Create
