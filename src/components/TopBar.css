@@ -139,3 +139,14 @@
   align-items: center;
   gap: 30px
 }
+
+/* Highlight active filter inside dropdown */
+.filter-menu .active-filter {
+  background-color: #fff3cd;   /* soft warning */
+  color: #856404;
+  font-weight: 600;
+}
+
+.filter-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+}
