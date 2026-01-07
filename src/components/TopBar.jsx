@@ -1,99 +1,108 @@
-import { Form, InputGroup, Button, Badge } from 'react-bootstrap';
-import './TopBar.css';
+import { Form, InputGroup, Button, Badge } from "react-bootstrap";
+import {
+  BarChart3,
+  AlertTriangle,
+  Target,
+  Search,
+  SlidersHorizontal,
+  Plus,
+} from "lucide-react";
+import "./TopBar.css";
 
 function TopBar({
   onSearchChange,
   onStatusFilterChange,
   activeStatusFilter,
   statusCounts,
-  onCreateClick
+  onCreateClick,
 }) {
   return (
     <div className="topbar">
-      {/* <div className="topbar-header">
-        <div className="user-profile">
-          <div className="user-avatar">👤</div>
-          <span className="username">Help ▼</span>
-        </div>
-      </div> */}
-
-      <div className="dashboard-header">
+      {/* Row 1: Title + KPI Pills */}
+      <div className="topbar-row-h topbar-header">
         <h1 className="dashboard-title">Enterprise Risk Management</h1>
 
-        <div className="stats-cards">
-          <div className="stat-card">
-            <div className="stat-icon">📊</div>
-            <div className="stat-content">
-              <div className="stat-value">213</div>
-              <div className="stat-label">Open Risks</div>
-            </div>
+        <div className="stats-pills">
+          <div className="pill">
+            <BarChart3 size={16} />
+            <strong>213</strong> Open Risks
           </div>
-
-          <div className="stat-card">
-            <div className="stat-icon priority">⚠️</div>
-            <div className="stat-content">
-              <div className="stat-value">23</div>
-              <div className="stat-label">High Priority High Priority</div>
-            </div>
+          <div className="pill">
+            <AlertTriangle size={16} />
+            <strong>23</strong> High Priority
           </div>
-
-          <div className="stat-card">
-            <div className="stat-icon threats">🎯</div>
-            <div className="stat-content">
-              <div className="stat-value">121</div>
-              <div className="stat-label">Threats</div>
-            </div>
+          <div className="pill">
+            <Target size={16} />
+            <strong>121</strong> Threats
           </div>
         </div>
       </div>
 
-      <div className="filters-section">
+      {/* Row 2: Status Tabs */}
+      <div className="topbar-row">
         <div className="status-filters">
-          <Button
-            variant={activeStatusFilter === 'all' ? 'warning' : 'light'}
-            className={`status-filter-btn ${activeStatusFilter === 'all' ? 'active' : ''}`}
-            onClick={() => onStatusFilterChange('all')}
+          <button
+            className={`status-tab ${
+              activeStatusFilter === "all" ? "active" : ""
+            }`}
+            onClick={() => onStatusFilterChange("all")}
           >
-            All <Badge bg="secondary">{statusCounts.all}</Badge>
-          </Button>
-          <Button
-            variant={activeStatusFilter === 'New' ? 'warning' : 'light'}
-            className={`status-filter-btn ${activeStatusFilter === 'New' ? 'active' : ''}`}
-            onClick={() => onStatusFilterChange('New')}
+            All <span>{statusCounts.all}</span>
+          </button>
+          <button
+            className={`status-tab ${
+              activeStatusFilter === "New" ? "active" : ""
+            }`}
+            onClick={() => onStatusFilterChange("New")}
           >
-            New <Badge bg="warning">{statusCounts.new}</Badge>
-          </Button>
-          <Button
-            variant={activeStatusFilter === 'Under Mitigation' ? 'warning' : 'light'}
-            className={`status-filter-btn ${activeStatusFilter === 'Under Mitigation' ? 'active' : ''}`}
-            onClick={() => onStatusFilterChange('Under Mitigation')}
+            New <span>{statusCounts.new}</span>
+          </button>
+          <button
+            className={`status-tab ${
+              activeStatusFilter === "Under Mitigation" ? "active" : ""
+            }`}
+            onClick={() => onStatusFilterChange("Under Mitigation")}
           >
-            Under Mitigation <Badge bg="secondary">{statusCounts.underMitigation}</Badge>
-          </Button>
-          <Button
-            variant={activeStatusFilter === 'Closed' ? 'warning' : 'light'}
-            className={`status-filter-btn ${activeStatusFilter === 'Closed' ? 'active' : ''}`}
-            onClick={() => onStatusFilterChange('Closed')}
+            Under Mitigation <span>{statusCounts.underMitigation}</span>
+          </button>
+          <button
+            className={`status-tab ${
+              activeStatusFilter === "Closed" ? "active" : ""
+            }`}
+            onClick={() => onStatusFilterChange("Closed")}
           >
-            Closed <Badge bg="secondary">{statusCounts.closed}</Badge>
-          </Button>
+            Closed <span>{statusCounts.closed}</span>
+          </button>
         </div>
+      </div>
 
-        <div className="search-section">
+      {/* Row 3: Search + Filters + Create (BELOW like screenshot) */}
+      <div className="topbar-row search-row">
+        <div className="search-left">
           <InputGroup className="search-input">
-            <InputGroup.Text>🔍</InputGroup.Text>
+            <InputGroup.Text>
+              <Search size={16} />
+            </InputGroup.Text>
             <Form.Control
-              placeholder="Search..."
+              placeholder="Find..."
               onChange={(e) => onSearchChange(e.target.value)}
             />
           </InputGroup>
+
           <Button variant="light" className="filters-btn">
-            ⚙️ Filters
-          </Button>
-          <Button variant="warning" className="create-btn" onClick={onCreateClick}>
-            + Create
+            <SlidersHorizontal size={16} />
+            Filters
           </Button>
         </div>
+
+        <Button
+          variant="warning"
+          className="create-btn"
+          onClick={onCreateClick}
+        >
+          <Plus size={16} />
+          Create
+        </Button>
       </div>
     </div>
   );
