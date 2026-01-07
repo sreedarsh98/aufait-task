@@ -1,0 +1,117 @@
+.risk-table-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.risk-table {
+  font-size: 14px;
+}
+
+.risk-table thead th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+  padding: 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.risk-table tbody td {
+  padding: 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.risk-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.risk-id {
+  color: #666;
+  font-weight: 500;
+}
+
+.description {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-open {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.status-new {
+  background-color: #9c27b0;
+  color: #fff;
+}
+
+.status-under {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.status-closed {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.status-exposed {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.type-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.showing-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.custom-pagination {
+  margin: 0;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #ff6b2c;
+  border-color: #ff6b2c;
+}
+
+.custom-pagination .page-link {
+  color: #333;
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  margin: 0 2px;
+  border-radius: 6px;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: #f8f9fa;
+  color: #ff6b2c;
+}

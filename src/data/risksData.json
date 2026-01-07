@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ERM-0330",
+    "riskId": "ERM-0330",
+    "description": "Integration of renewable energy sources in...",
+    "status": "Open Mitigation",
+    "type": "Opportunity",
+    "phase": "Acquired",
+    "department": "Finance",
+    "likelihood": 3,
+    "impact": 5
+  },
+  {
+    "id": "ERM-0329",
+    "riskId": "ERM-0329",
+    "description": "Risk of loss from inadequate or failed int...",
+    "status": "New",
+    "type": "Opportunity",
+    "phase": "Transit",
+    "department": "Commercial",
+    "likelihood": 3,
+    "impact": 1
+  },
+  {
+    "id": "ERM-0328",
+    "riskId": "ERM-0328",
+    "description": "Development of offshore wind farms to...",
+    "status": "Open Mitigation",
+    "type": "Threat",
+    "phase": "Testing",
+    "department": "Mfg. Assembly",
+    "likelihood": 4,
+    "impact": 3
+  },
+  {
+    "id": "ERM-0327",
+    "riskId": "ERM-0327",
+    "description": "Investment in electric vehicle charging in...",
+    "status": "Under Mitigation",
+    "type": "Threat",
+    "phase": "Iterative",
+    "department": "Sales",
+    "likelihood": 5,
+    "impact": 5
+  },
+  {
+    "id": "ERM-0326",
+    "riskId": "ERM-0326",
+    "description": "Adoption of hybrid energy systems comb...",
+    "status": "Under Mitigation",
+    "type": "Opportunity",
+    "phase": "Staffing",
+    "department": "CEESO/OA-OBO",
+    "likelihood": 3,
+    "impact": 3
+  },
+  {
+    "id": "ERM-0325",
+    "riskId": "ERM-0325",
+    "description": "Regulatory changes impacting renewable e...",
+    "status": "New",
+    "type": "Threat",
+    "phase": "Procurement",
+    "department": "Finance",
+    "likelihood": 3,
+    "impact": 2
+  },
+  {
+    "id": "ERM-0324",
+    "riskId": "ERM-0324",
+    "description": "Expansion of energy storage solutions t...",
+    "status": "Exposed",
+    "type": "Threat",
+    "phase": "Transit",
+    "department": "Products Sales",
+    "likelihood": 2,
+    "impact": 3
+  },
+  {
+    "id": "ERM-0323",
+    "riskId": "ERM-0323",
+    "description": "Increased demand for sustainable energy...",
+    "status": "Under Mitigation",
+    "type": "Opportunity",
+    "phase": "Warranty",
+    "department": "SCM LMD",
+    "likelihood": 1,
+    "impact": 1
+  },
+  {
+    "id": "ERM-0322",
+    "riskId": "ERM-0322",
+    "description": "Collaboration with government to...",
+    "status": "Under Mitigation",
+    "type": "Threat",
+    "phase": "Financing",
+    "department": "Finance",
+    "likelihood": 5,
+    "impact": 5
+  },
+  {
+    "id": "ERM-0321",
+    "riskId": "ERM-0321",
+    "description": "Growth in turbine efficiency through inn...",
+    "status": "Exposed",
+    "type": "Opportunity",
+    "phase": "Transit",
+    "department": "HR",
+    "likelihood": 2,
+    "impact": 2
+  },
+  {
+    "id": "ERM-0320",
+    "riskId": "ERM-0320",
+    "description": "Emergence of smart grid technologies t...",
+    "status": "New",
+    "type": "Opportunity",
+    "phase": "Staffing",
+    "department": "Mfg. Subcontracting",
+    "likelihood": 2,
+    "impact": 2
+  },
+  {
+    "id": "ERM-0299",
+    "riskId": "ERM-0299",
+    "description": "Focus on community-based renewable...",
+    "status": "Closed",
+    "type": "Threat",
+    "phase": "Warranty",
+    "department": "Sales",
+    "likelihood": 1,
+    "impact": 1
+  },
+  {
+    "id": "ERM-0298",
+    "riskId": "ERM-0298",
+    "description": "Integration of artificial intelligence in en...",
+    "status": "New",
+    "type": "Threat",
+    "phase": "Warranty",
+    "department": "HR",
+    "likelihood": 4,
+    "impact": 1
+  },
+  {
+    "id": "ERM-0297",
+    "riskId": "ERM-0297",
+    "description": "Research into offshore floating wind t...",
+    "status": "Closed",
+    "type": "Opportunity",
+    "phase": "Financing",
+    "department": "Finance",
+    "likelihood": 4,
+    "impact": 4
+  },
+  {
+    "id": "ERM-0296",
+    "riskId": "ERM-0296",
+    "description": "Partnerships with local communities for...",
+    "status": "Under Mitigation",
+    "type": "Opportunity",
+    "phase": "Warranty",
+    "department": "HR",
+    "likelihood": 1,
+    "impact": 4
+  }
+]
