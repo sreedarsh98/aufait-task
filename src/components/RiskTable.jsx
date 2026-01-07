@@ -9,23 +9,25 @@ function RiskTable({ risks }) {
 
   const getStatusClass = (status) => {
     switch (status) {
-      case 'Open Mitigation':
-        return 'status-open';
-      case 'New':
-        return 'status-new';
       case 'Under Mitigation':
         return 'status-under';
+      case 'New':
+        return 'status-new';
+      case 'Pending Mitigation':
+        return 'status-pending';
+      case 'Escalated':
+        return 'status-escalated';
       case 'Closed':
         return 'status-closed';
-      case 'Exposed':
-        return 'status-exposed';
+      case 'Draft':
+        return 'status-draft';
       default:
         return '';
     }
   };
 
-  const getTypeIcon = (type) => {
-    return type === 'Opportunity' ? '🔵' : '🔴';
+  const getTypeClass = (type) => {
+    return type === 'Opportunity' ? 'type-opportunity' : 'type-threat';
   };
 
   const handleSort = (key) => {
@@ -42,12 +44,8 @@ function RiskTable({ risks }) {
     const aValue = a[sortConfig.key];
     const bValue = b[sortConfig.key];
 
-    if (aValue < bValue) {
-      return sortConfig.direction === 'asc' ? -1 : 1;
-    }
-    if (aValue > bValue) {
-      return sortConfig.direction === 'asc' ? 1 : -1;
-    }
+    if (aValue < bValue) return sortConfig.direction === 'asc' ? -1 : 1;
+    if (aValue > bValue) return sortConfig.direction === 'asc' ? 1 : -1;
     return 0;
   });
 
@@ -66,51 +64,60 @@ function RiskTable({ risks }) {
       <Table hover responsive className="risk-table">
         <thead>
           <tr>
-            <th onClick={() => handleSort('riskId')} style={{ cursor: 'pointer' }}>
-              Risk ID {getSortIndicator('riskId')}
+            <th onClick={() => handleSort('riskId')}>
+              Record No. {getSortIndicator('riskId')}
             </th>
-            <th onClick={() => handleSort('description')} style={{ cursor: 'pointer' }}>
+            <th onClick={() => handleSort('description')}>
               Risk Activity Description {getSortIndicator('description')}
             </th>
-            <th onClick={() => handleSort('status')} style={{ cursor: 'pointer' }}>
+            <th onClick={() => handleSort('status')}>
               Status {getSortIndicator('status')}
             </th>
-            <th onClick={() => handleSort('type')} style={{ cursor: 'pointer' }}>
+            <th onClick={() => handleSort('type')}>
               Type {getSortIndicator('type')}
             </th>
-            <th onClick={() => handleSort('phase')} style={{ cursor: 'pointer' }}>
+            <th onClick={() => handleSort('phase')}>
               Phase {getSortIndicator('phase')}
             </th>
-            <th onClick={() => handleSort('department')} style={{ cursor: 'pointer' }}>
+            <th onClick={() => handleSort('department')}>
               Department {getSortIndicator('department')}
             </th>
-            <th onClick={() => handleSort('likelihood')} style={{ cursor: 'pointer' }}>
-              Likelihood score (Unstr... - Intrisic) {getSortIndicator('likelihood')}
+            <th onClick={() => handleSort('impact')}>
+              Inherent Impact (Low – High) {getSortIndicator('impact')}
             </th>
-            <th onClick={() => handleSort('impact')} style={{ cursor: 'pointer' }}>
-              Impact score (Unstr... - Intrisic) {getSortIndicator('impact')}
-            </th>
+            {/* <th onClick={() => handleSort('likelihood')}>
+              Inherent Likelihood (Rare – Almost Certain) {getSortIndicator('likelihood')}
+            </th> */}
           </tr>
         </thead>
+
         <tbody>
           {currentItems.map((risk) => (
             <tr key={risk.id}>
               <td className="risk-id">{risk.riskId}</td>
-              <td className="description">{risk.description}</td>
+
+              <td className="description" title={risk.description}>
+                {risk.description}
+              </td>
+
               <td>
                 <Badge className={`status-badge ${getStatusClass(risk.status)}`}>
                   {risk.status}
                 </Badge>
               </td>
+
               <td>
                 <span className="type-cell">
-                  {getTypeIcon(risk.type)} {risk.type}
+                  <span className={`type-dot ${getTypeClass(risk.type)}`} />
+                  {risk.type}
                 </span>
               </td>
+
               <td>{risk.phase}</td>
               <td>{risk.department}</td>
-              <td className="text-center">{risk.likelihood}</td>
+
               <td className="text-center">{risk.impact}</td>
+              {/* <td className="text-center">{risk.likelihood}</td> */}
             </tr>
           ))}
         </tbody>
@@ -120,21 +127,27 @@ function RiskTable({ risks }) {
         <div className="showing-info">
           Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, sortedRisks.length)} of {sortedRisks.length} items
         </div>
+
         <Pagination className="custom-pagination">
           <Pagination.Prev
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
           />
+
           <Pagination.Item active={currentPage === 1} onClick={() => setCurrentPage(1)}>
             1
           </Pagination.Item>
+
           {currentPage > 3 && <Pagination.Ellipsis />}
+
           {currentPage > 2 && currentPage < totalPages && (
             <Pagination.Item active onClick={() => setCurrentPage(currentPage)}>
               {currentPage}
             </Pagination.Item>
           )}
+
           {currentPage < totalPages - 1 && <Pagination.Ellipsis />}
+
           {totalPages > 1 && (
             <Pagination.Item
               active={currentPage === totalPages}
@@ -143,6 +156,7 @@ function RiskTable({ risks }) {
               {totalPages}
             </Pagination.Item>
           )}
+
           <Pagination.Next
             onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}

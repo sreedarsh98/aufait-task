@@ -1,99 +1,138 @@
+/* Container */
 .risk-table-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 16px;
+  border: 1px solid #eeeeee;
 }
 
+/* Table */
 .risk-table {
-  font-size: 14px;
-}
-
-.risk-table thead th {
-  background-color: #f8f9fa;
-  color: #333;
-  font-weight: 600;
-  border-bottom: 2px solid #dee2e6;
-  padding: 12px;
   font-size: 13px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Header */
+.risk-table thead th {
+  background-color: #fafafa;
+  color: #555;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 12px;
+  font-size: 12px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
+/* Body cells */
 .risk-table tbody td {
-  padding: 12px;
+  padding: 10px 12px;
   vertical-align: middle;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f1f1f1;
   color: #333;
+  font-size: 13px;
 }
 
+/* Row hover */
 .risk-table tbody tr:hover {
-  background-color: #f8f9fa;
+  background-color: #f9fafb;
 }
 
+/* Risk ID */
 .risk-id {
   color: #666;
   font-weight: 500;
 }
 
+/* Description (truncate like UI) */
 .description {
-  max-width: 250px;
+  max-width: 260px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+/* Status badge */
 .status-badge {
-  padding: 6px 12px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-.status-open {
-  background-color: #2196f3;
+/* Status colors */
+.status-under {
+  background-color: #1e88e5;
   color: #fff;
 }
 
 .status-new {
-  background-color: #9c27b0;
+  background-color: #7e57c2;
   color: #fff;
 }
 
-.status-under {
-  background-color: #ff9800;
+.status-pending {
+  background-color: #fb8c00;
+  color: #fff;
+}
+
+.status-escalated {
+  background-color: #e53935;
   color: #fff;
 }
 
 .status-closed {
-  background-color: #4caf50;
+  background-color: #607d8b;
   color: #fff;
 }
 
-.status-exposed {
-  background-color: #f44336;
+.status-draft {
+  background-color: #ab47bc;
   color: #fff;
 }
 
+/* Type cell */
 .type-cell {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
+/* Type dot */
+.type-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Type colors */
+.type-threat {
+  background-color: #f44336;
+}
+
+.type-opportunity {
+  background-color: #1e88e5;
+}
+
+/* Footer */
 .table-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid #e5e5e5;
 }
 
 .showing-info {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #777;
 }
 
+/* Pagination */
 .custom-pagination {
   margin: 0;
 }
@@ -105,10 +144,11 @@
 
 .custom-pagination .page-link {
   color: #333;
-  border: 1px solid #dee2e6;
-  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  padding: 6px 10px;
   margin: 0 2px;
   border-radius: 6px;
+  font-size: 13px;
 }
 
 .custom-pagination .page-link:hover {
