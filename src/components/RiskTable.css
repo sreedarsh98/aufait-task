@@ -4,14 +4,14 @@
   padding: 16px;
   border-radius: 10px;
   margin-top: 16px;
-  border: 1px solid #eeeeee;
+  border: 1px solid #e0e0e0;
 }
 
 /* Table */
 .risk-table {
   font-size: 13px;
-  border-collapse: separate;
-  border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse; /* IMPORTANT for full grid */
 }
 
 /* Header */
@@ -19,20 +19,24 @@
   background-color: #fafafa;
   color: #555;
   font-weight: 600;
-  border-bottom: 1px solid #e5e5e5;
   padding: 10px 12px;
   font-size: 12px;
   white-space: nowrap;
   cursor: pointer;
+
+  /* FULL BORDER */
+  border: 1px solid #e0e0e0;
 }
 
 /* Body cells */
 .risk-table tbody td {
   padding: 10px 12px;
   vertical-align: middle;
-  border-bottom: 1px solid #f1f1f1;
   color: #333;
   font-size: 13px;
+
+  /* FULL BORDER */
+  border: 1px solid #e0e0e0;
 }
 
 /* Row hover */
@@ -46,7 +50,7 @@
   font-weight: 500;
 }
 
-/* Description (truncate like UI) */
+/* Description truncate */
 .description {
   max-width: 260px;
   overflow: hidden;
@@ -63,35 +67,12 @@
 }
 
 /* Status colors */
-.status-under {
-  background-color: #1e88e5;
-  color: #fff;
-}
-
-.status-new {
-  background-color: #7e57c2;
-  color: #fff;
-}
-
-.status-pending {
-  background-color: #fb8c00;
-  color: #fff;
-}
-
-.status-escalated {
-  background-color: #e53935;
-  color: #fff;
-}
-
-.status-closed {
-  background-color: #607d8b;
-  color: #fff;
-}
-
-.status-draft {
-  background-color: #ab47bc;
-  color: #fff;
-}
+.status-under { background-color: #1e88e5; color: #fff; }
+.status-new { background-color: #7e57c2; color: #fff; }
+.status-pending { background-color: #fb8c00; color: #fff; }
+.status-escalated { background-color: #e53935; color: #fff; }
+.status-closed { background-color: #607d8b; color: #fff; }
+.status-draft { background-color: #ab47bc; color: #fff; }
 
 /* Type cell */
 .type-cell {
@@ -109,13 +90,8 @@
 }
 
 /* Type colors */
-.type-threat {
-  background-color: #f44336;
-}
-
-.type-opportunity {
-  background-color: #1e88e5;
-}
+.type-threat { background-color: #f44336; }
+.type-opportunity { background-color: #1e88e5; }
 
 /* Footer */
 .table-footer {
@@ -124,7 +100,7 @@
   align-items: center;
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e0e0e0;
 }
 
 .showing-info {

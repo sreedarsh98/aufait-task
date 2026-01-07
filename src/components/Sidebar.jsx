@@ -1,26 +1,43 @@
-import './Sidebar.css';
+import {
+  Home,
+  LayoutGrid,
+  Pencil,
+  FileText,
+  Layers,
+  Settings
+} from "lucide-react";
+import "./Sidebar.css";
 
 function Sidebar() {
   return (
     <div className="sidebar">
+      {/* Top Section */}
       <div className="sidebar-header">
-        <div className="sidebar-icon menu-icon">☰</div>
+        <div className="sidebar-icon menu-icon">
+          <LayoutGrid size={20} />
+        </div>
       </div>
+
+      {/* Middle Menu */}
       <div className="sidebar-menu">
         <div className="sidebar-icon active">
-          <i className="icon">🏠</i>
+          <Home size={20} />
         </div>
         <div className="sidebar-icon">
-          <i className="icon">⚡</i>
+          <Pencil size={20} />
         </div>
         <div className="sidebar-icon">
-          <i className="icon">📊</i>
+          <FileText size={20} />
         </div>
         <div className="sidebar-icon">
-          <i className="icon">📋</i>
+          <Layers size={20} />
         </div>
+      </div>
+
+      {/* Bottom Settings */}
+      <div className="sidebar-footer">
         <div className="sidebar-icon">
-          <i className="icon">⚙️</i>
+          <Settings size={20} />
         </div>
       </div>
     </div>

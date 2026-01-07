@@ -61,33 +61,17 @@ function RiskTable({ risks }) {
 
   return (
     <div className="risk-table-container">
-      <Table hover responsive className="risk-table">
+      <Table responsive className="risk-table">
         <thead>
           <tr>
-            <th onClick={() => handleSort('riskId')}>
-              Record No. {getSortIndicator('riskId')}
-            </th>
-            <th onClick={() => handleSort('description')}>
-              Risk Activity Description {getSortIndicator('description')}
-            </th>
-            <th onClick={() => handleSort('status')}>
-              Status {getSortIndicator('status')}
-            </th>
-            <th onClick={() => handleSort('type')}>
-              Type {getSortIndicator('type')}
-            </th>
-            <th onClick={() => handleSort('phase')}>
-              Phase {getSortIndicator('phase')}
-            </th>
-            <th onClick={() => handleSort('department')}>
-              Department {getSortIndicator('department')}
-            </th>
-            <th onClick={() => handleSort('impact')}>
-              Inherent Impact (Low – High) {getSortIndicator('impact')}
-            </th>
-            {/* <th onClick={() => handleSort('likelihood')}>
-              Inherent Likelihood (Rare – Almost Certain) {getSortIndicator('likelihood')}
-            </th> */}
+            <th onClick={() => handleSort('riskId')}>Record No. {getSortIndicator('riskId')}</th>
+            <th onClick={() => handleSort('description')}>Risk Activity Description {getSortIndicator('description')}</th>
+            <th onClick={() => handleSort('status')}>Status {getSortIndicator('status')}</th>
+            <th onClick={() => handleSort('type')}>Type {getSortIndicator('type')}</th>
+            <th onClick={() => handleSort('phase')}>Phase {getSortIndicator('phase')}</th>
+            <th onClick={() => handleSort('department')}>Department {getSortIndicator('department')}</th>
+            <th onClick={() => handleSort('impact')}>Inherent Impact {getSortIndicator('impact')}</th>
+            <th onClick={() => handleSort('likelihood')}>Inherent Likelihood {getSortIndicator('likelihood')}</th>
           </tr>
         </thead>
 
@@ -95,29 +79,22 @@ function RiskTable({ risks }) {
           {currentItems.map((risk) => (
             <tr key={risk.id}>
               <td className="risk-id">{risk.riskId}</td>
-
-              <td className="description" title={risk.description}>
-                {risk.description}
-              </td>
-
+              <td className="description" title={risk.description}>{risk.description}</td>
               <td>
                 <Badge className={`status-badge ${getStatusClass(risk.status)}`}>
                   {risk.status}
                 </Badge>
               </td>
-
               <td>
                 <span className="type-cell">
                   <span className={`type-dot ${getTypeClass(risk.type)}`} />
                   {risk.type}
                 </span>
               </td>
-
               <td>{risk.phase}</td>
               <td>{risk.department}</td>
-
               <td className="text-center">{risk.impact}</td>
-              {/* <td className="text-center">{risk.likelihood}</td> */}
+              <td className="text-center">{risk.likelihood}</td>
             </tr>
           ))}
         </tbody>
@@ -134,18 +111,14 @@ function RiskTable({ risks }) {
             disabled={currentPage === 1}
           />
 
-          <Pagination.Item active={currentPage === 1} onClick={() => setCurrentPage(1)}>
-            1
-          </Pagination.Item>
+          <Pagination.Item active={currentPage === 1} onClick={() => setCurrentPage(1)}>1</Pagination.Item>
 
           {currentPage > 3 && <Pagination.Ellipsis />}
-
           {currentPage > 2 && currentPage < totalPages && (
             <Pagination.Item active onClick={() => setCurrentPage(currentPage)}>
               {currentPage}
             </Pagination.Item>
           )}
-
           {currentPage < totalPages - 1 && <Pagination.Ellipsis />}
 
           {totalPages > 1 && (
