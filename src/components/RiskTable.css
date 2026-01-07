@@ -1,4 +1,3 @@
-/* Container */
 .risk-table-container {
   background-color: #ffffff;
   padding: 16px;
@@ -7,14 +6,12 @@
   border: 1px solid #e0e0e0;
 }
 
-/* Table */
 .risk-table {
   font-size: 13px;
   width: 100%;
-  border-collapse: collapse; /* IMPORTANT for full grid */
+  border-collapse: collapse; 
 }
 
-/* Header */
 .risk-table thead th {
   background-color: #fafafa;
   color: #555;
@@ -24,33 +21,27 @@
   white-space: nowrap;
   cursor: pointer;
 
-  /* FULL BORDER */
   border: 1px solid #e0e0e0;
 }
 
-/* Body cells */
 .risk-table tbody td {
   padding: 10px 12px;
   vertical-align: middle;
   color: #333;
   font-size: 13px;
 
-  /* FULL BORDER */
   border: 1px solid #e0e0e0;
 }
 
-/* Row hover */
 .risk-table tbody tr:hover {
   background-color: #f9fafb;
 }
 
-/* Risk ID */
 .risk-id {
   color: #666;
   font-weight: 500;
 }
 
-/* Description truncate */
 .description {
   max-width: 260px;
   overflow: hidden;
@@ -58,7 +49,6 @@
   white-space: nowrap;
 }
 
-/* Status badge */
 .status-badge {
   padding: 4px 10px;
   border-radius: 10px;

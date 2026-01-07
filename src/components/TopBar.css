@@ -4,21 +4,18 @@
   border-bottom: 1px solid #eee;
 }
 
-/* Rows */
 .topbar-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Title */
 .dashboard-title {
   font-size: 18px;
   font-weight: 600;
   color: #222;
 }
 
-/* KPI Pills */
 .stats-pills {
   display: flex;
   gap: 12px;
@@ -39,7 +36,6 @@
   font-weight: 600;
 }
 
-/* Status Tabs */
 .status-filters {
   display: flex;
   gap: 18px;
@@ -80,7 +76,6 @@
   border-radius: 2px;
 }
 
-/* Search Row */
 .search-row {
   margin-top: 12px;
 }
@@ -116,17 +111,16 @@
   border-radius: 6px;
 }
 
-/* Create Button */
 .create-btn {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 13px;
   font-weight: 600;
-  background: #ff6b2c;
+  background: #E87402;
   border: none;
-  color: #fff;
-  padding: 7px 14px;
+  color: #FFF !important;
+  padding: 8px 12px;
   border-radius: 6px;
 }
 
@@ -140,9 +134,8 @@
   gap: 30px
 }
 
-/* Highlight active filter inside dropdown */
 .filter-menu .active-filter {
-  background-color: #fff3cd;   /* soft warning */
+  background-color: #fff3cd;   
   color: #856404;
   font-weight: 600;
 }
